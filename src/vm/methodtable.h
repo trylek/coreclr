@@ -1717,6 +1717,8 @@ public:
 
     inline BOOL HasExplicitSize();
 
+    void LogManagedSequentialResult(BOOL result);
+
     UINT32 GetNativeSize();
 
     DWORD           GetBaseSize()

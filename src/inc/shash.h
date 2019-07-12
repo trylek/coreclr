@@ -870,6 +870,11 @@ class SStringSHashTraits : public PtrSHashTraits<ELEMENT, SString>
         WRAPPER_NO_CONTRACT;
         return k.Hash();
     }
+    static const key_t& GetKey(const element_t& e)
+    {
+        WRAPPER_NO_CONTRACT;
+        return *e;
+    }
 };
 
 template <typename ELEMENT>

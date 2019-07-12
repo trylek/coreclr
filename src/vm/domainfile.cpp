@@ -2195,7 +2195,7 @@ bool DomainAssembly::GetDebuggingOverrides(DWORD *pdwFlags)
     return fHasBits;
 
 #else  // DEBUGGING_SUPPORTED && !FEATURE_CORESYSTEM
-    return false;
+    return true;
 #endif // DEBUGGING_SUPPORTED && !FEATURE_CORESYSTEM
 }
 

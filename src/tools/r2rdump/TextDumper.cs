@@ -277,6 +277,10 @@ namespace R2RDump
                     }
                     break;
                 case R2RSection.SectionType.READYTORUN_SECTION_METHODDEF_ENTRYPOINTS:
+                    foreach (R2RMethod method in NormalizedMethods())
+                    {
+                        _writer.WriteLine(method.SignatureString);
+                    }
                     if (!_options.Naked)
                     {
                         NativeArray methodEntryPoints = new NativeArray(_r2r.Image, (uint)_r2r.GetOffset(section.RelativeVirtualAddress));

@@ -1213,7 +1213,16 @@ inline BOOL MethodTable::IsSealed()
 inline BOOL MethodTable::IsManagedSequential()
 {
     LIMITED_METHOD_CONTRACT;
-    return GetClass()->IsManagedSequential();
+    if (GetClass()->IsManagedSequential())
+    {
+        LogManagedSequentialResult(TRUE);
+        return TRUE;
+    }
+    else
+    {
+        LogManagedSequentialResult(FALSE);
+        return FALSE;
+    }
 }
 
 //==========================================================================================

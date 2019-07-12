@@ -10397,5 +10397,14 @@ BOOL MethodTable::IsInheritanceChainFixedInCurrentVersionBubble()
 
     return TRUE;
 }
-
 #endif // FEATURE_READYTORUN_COMPILER
+
+void MethodTable::LogManagedSequentialResult(BOOL result)
+{
+    LPCUTF8 nameSpace;
+    LPCUTF8 className = GetFullyQualifiedNameInfo(&nameSpace);
+    wprintf(L"[[[IsManagedSequential{%S::%S}=%S]]]\n",
+        (nameSpace != nullptr ? nameSpace : ""),
+        className,
+        (result ? "True" : "False"));
+}
