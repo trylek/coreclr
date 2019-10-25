@@ -25,8 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <AllProjects Include="*\**\*.csproj" Exclude="@(DisabledProjects)" />
-      <AllProjects Include="*\**\*.ilproj" Exclude="@(DisabledProjects)" />
+      <AllProjects Include="baseservices\threading\commitstackonlyasneeded\DefaultStackCommit.csproj" />
     </ItemGroup>
 
     <!-- All the test projects are partitioned into the test groups as defined below.
