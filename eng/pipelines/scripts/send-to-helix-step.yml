@@ -30,7 +30,7 @@ steps:
       condition: ${{ parameters.condition }}
 
   - powershell: eng\common\msbuild.ps1 -ci ${{ parameters.helixProjectArguments }} /maxcpucount /bl:${{ parameters.coreClrRepoRoot }}/bin/Logs/SendToHelix.binlog
-    displayName: ${{ parameters.displayName }}
+    displayName: ${{ parameters.displayName }}; scenarios: ${{ join(',', parameters.scenarios }}
     ${{ if ne(parameters.condition, '') }}:
       condition: ${{ parameters.condition }}
     env:

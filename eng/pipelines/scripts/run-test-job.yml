@@ -183,7 +183,7 @@ jobs:
     # Send tests to Helix
     - template: send-to-helix-step.yml
       parameters:
-        displayName: Send tests to Helix
+        displayName: Send tests to Helix; testGroup: '${{ parameters.testGroup }}'
         buildConfig: $(buildConfigUpper)
         archType: ${{ parameters.archType }}
         osGroup: ${{ parameters.osGroup }}
