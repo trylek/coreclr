@@ -8,6 +8,7 @@ parameters:
   container: ''
   testGroup: ''
   readyToRun: false
+  crossgen2: false
   helixQueues: ''
   crossrootfsDir: ''
   # If true, run the corefx tests instead of the coreclr ones
@@ -48,6 +49,7 @@ jobs:
     testGroup: ${{ parameters.testGroup }}
     crossrootfsDir: ${{ parameters.crossrootfsDir }}
     readyToRun: ${{ parameters.readyToRun }}
+    crossgen2: ${{ parameters.crossgen2 }}
     helixQueues: ${{ parameters.helixQueues }}
     corefxTests: ${{ parameters.coreFxTests }}
     displayNameArgs: ${{ parameters.displayNameArgs }}
